@@ -1,6 +1,8 @@
 # PyCalcolAr #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+__to be completed based on the following instructions__
+
+This README will document whatever steps are necessary to get your application up and running and what it is meant for.
 
 ### What is this repository for? ###
 
