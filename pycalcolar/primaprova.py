@@ -2,7 +2,8 @@
 """
 Created on Tue Nov  3 22:01:35 2020
 
-@author: teres
+@author: teresa
+
 
 """
 
@@ -59,6 +60,7 @@ print ('corr_40_36: ', corr_40_36)
 A = 298.56
 source_frax = corr_40_36 / A
 print ('source_frax: ', source_frax)
+
 
 
 
