@@ -9,60 +9,60 @@ Created on Tue Nov  3 22:01:35 2020
 
 import pandas as pd
 
-# importo file run.triplo36 (air_pipette)
-colNamesInitData=['40F', 'err40F', '38IC0', 'err38IC0', '36IC1', 'err36IC1', '36IC0', 'err36IC0','36F', 'err 36F', 'gain IC0/IC1', 'err gain IC0/IC1', 'gain F/IC1', 'err gain F/IC1' , 'gain F/IC0', 'err gain F/IC0', '40F/36IC1', 'err 40F/36IC1 ', '40F/36F', 'err 40F/36F', '40F/36IC0', 'err 40F/36IC0' , '38IC0/36IC0', 'err 38IC0/36IC0', 'Run', 'Path']
+"""importo file run.triplo36 (air_pipette)"""
+colNamesInitData = ['40F', 'err40F', '38IC0', 'err38IC0', '36IC1', 'err36IC1', '36IC0', 'err36IC0', '36F', 'err 36F', 'gain IC0/IC1', 'err gain IC0/IC1', 'gain F/IC1', 'err gain F/IC1', 'gain F/IC0', 'err gain F/IC0', '40F/36IC1', 'err 40F/36IC1 ', '40F/36F', 'err 40F/36F', '40F/36IC0', 'err 40F/36IC0', '38IC0/36IC0', 'err 38IC0/36IC0', 'Run', 'Path']
 
+"""filePath"""
+filePath = "../test_data/Triplo36esempio.txt"
 
-# filePath = "../test_data/Triplo36esempio.txt"
-filePath = "C:\\Users\\teres\\Documents\\PyCalcolAr\\test_data\\Triplo36esempio.txt"
+"""creo nuovo dataframe con tutti i dati"""
+airpipette_initData = pd.read_csv(filePath, header=None, names=colNamesInitData)
 
+"""estraggo dataframe con le colonne utili"""
+airpipette_utilData = airpipette_initData[['40F', 'err40F', '38IC0', 'err38IC0', '36IC1', 'err36IC1', '36IC0', 'err36IC0', '36F', 'err 36F']]
+print(airpipette_utilData)
 
-airpipette_initData = pd.read_csv(filePath, header = None, names = colNamesInitData)
-
-# creo un nuovo dataframe con le colonne utili
-airpipette_utilData = airpipette_initData[['40F', 'err40F', '38IC0', 'err38IC0', '36IC1', 'err36IC1', '36IC0', 'err36IC0','36F', 'err 36F']]
-
-
-#df.replace(to_replace ="Boston Celtics", 
-                # value ="Omega Warrior") 
+# df.replace(to_replace ="Boston Celtics",
+# value ="Omega Warrior")
 
 # airpipette_utilData.replace(to_replace = ["{", "}"], value = "", inplace=True)
 
 
-# svolgo le operazioni utili che saranno presenti nel file excel (airpipette_Data)
+"""svolgo le operazioni utili che saranno presenti nel file excel (airpipette_Data)"""
+
+"""invece di stampare semplicemente con print, qui sotto puoi salvare i risultati in nuove colonne del dataframe ____________________________AB"""
+
+"""qui sotto ho cambiato il riferimento alle colonne usando ":" e "values" in modo da poter usare lo stesso codice con file con più riche di dati ____________________________AB"""
 
 # calcolo gain F/IC0
-A = airpipette_utilData.loc[0,'36F']
-B = airpipette_utilData.loc[0,'36IC0']
+A = airpipette_utilData.loc[:, '36F'].values
+B = airpipette_utilData.loc[:, '36IC0'].values
 
-gain_F_IC0 = A/B
-print ('gain F/IC0: ', gain_F_IC0)
+gain_F_IC0 = A / B
+print('gain F/IC0: ', gain_F_IC0)
 
 # calcolo gain F/IC1 
-A = airpipette_utilData.loc[0,'36F']
-C = airpipette_utilData.loc[0,'36IC1']
+A = airpipette_utilData.loc[:, '36F'].values
+C = airpipette_utilData.loc[:, '36IC1'].values
 
-gain_F_IC1 = A/C
-print ('gain F/IC1: ', gain_F_IC1)
+gain_F_IC1 = A / C
+print('gain F/IC1: ', gain_F_IC1)
 
 # calcolo 36IC0 correzione gain
-A = airpipette_utilData.loc[0,'36IC0']
+A = airpipette_utilData.loc[:, '36IC0'].values
 corr_gain_36IC0 = A * gain_F_IC0
-print ('corr_gain_36IC0: ', corr_gain_36IC0) 
+print('corr_gain_36IC0: ', corr_gain_36IC0)
 
 # calcolo 40/36 correzione
-A = airpipette_utilData.loc[0,'40F']
-B = 62415000 
+A = airpipette_utilData.loc[:, '40F'].values
+B = 62415000
 corr_40_36 = (A * B) / corr_gain_36IC0
-print ('corr_40_36: ', corr_40_36)
+print('corr_40_36: ', corr_40_36)
 
 # calcolo source frax
 A = 298.56
 source_frax = corr_40_36 / A
-print ('source_frax: ', source_frax)
-
-
-
+print('source_frax: ', source_frax)
 
 # #lista con i nomi delle colonne
 # colNamesInitData=['40F', 'err40F', '38IC0', 'err38IC0', '36IC1', 'err36IC1', '38F', 'err38F','36IC0', 'err 36', '39F', 'err39F', '37IC0', 'err37IC0' , '35IC1', 'err35IC1', '39IC0',  'err39IC0',  '37IC1', 'err37IC1', 'F/IC0', 'errF/IC0' , 'IC0/IC1', 'errIC0/IC1', '40F/36IC1',  'err40F/36IC1',  '40F/36IC0' ,'err40F/36IC0', 'Run', 'Path']
