@@ -64,37 +64,40 @@ A = 298.56
 source_frax = corr_40_36 / A
 print('source_frax: ', source_frax)
 
-# #lista con i nomi delle colonne
-# colNamesInitData=['40F', 'err40F', '38IC0', 'err38IC0', '36IC1', 'err36IC1', '38F', 'err38F','36IC0', 'err 36', '39F', 'err39F', '37IC0', 'err37IC0' , '35IC1', 'err35IC1', '39IC0',  'err39IC0',  '37IC1', 'err37IC1', 'F/IC0', 'errF/IC0' , 'IC0/IC1', 'errIC0/IC1', '40F/36IC1',  'err40F/36IC1',  '40F/36IC0' ,'err40F/36IC0', 'Run', 'Path']
 
-# filePath = "C:\\Users\\teres\\Desktop\\Tesi\\Run4esempio.txt"
-
-# #importazione del file Run.txt in un data frame pandas
-# initData = pd.read_csv(filePath, header = None, names = colNamesInitData)
-
-# #eliminare ultima riga della tabella (dataframe) che contiene dati sbagliati 
-# initData = initData.drop([5]) #da togliere nella versione finale (solo per il file Run4esempio.txt)
-
-# gain_F_IC = float(1.2528)
-# 36IC_corr = 339160
-# 40_36_corr = float(297.34)
-# source_frax= float(0.9959)
+# Tabella sample_data
 
 
-# sampleData_V = initData.loc[:, ["40F", "err40F", "38IC0", "err38IC0", "36IC1", "err36IC1", "39F", "err39F", "37IC0", "err37IC0"]]
-# sampleData_V = sampleData_V.replace("{", "", regex=True)
-# sampleData_V = sampleData_V.replace("}", "", regex=True)
+# importo file run.4 e creo la lista con i nomi delle colonne 
+colNamesInitData=['40Ar F', 'err40Ar F', '38Ar IC0', 'err38Ar IC0', '36Ar IC1', 'err36Ar IC1','38Ar F', 'err38Ar F','36Ar IC0', 'err36Ar IC0 ', '39Ar F', 'err39Ar F', '37Ar IC0', 'err37Ar IC0' , '35Cl IC1', 'err35Cl IC1', '39Ar IC0',  'err39Ar IC0',  '37Ar IC1', 'err37Ar IC1', 'gainF/IC0', 'err gainF/IC0' , 'gainIC0/IC1', 'err gainIC0/IC1', '40F/36IC1',  'err40F/36IC1',  '40F/36IC0' ,'err40F/36IC0', 'Run', 'Path']
 
-# sampleData_mV ["40F"] = pd.to_numeric(sampleData_V ["40F"]) * 1000
-# sampleData_mV ["err40F"] = pd.to_numeric(sampleData_V ["err40F"]) * 1000
-# sampleData_mV ["38IC0"] = pd.to_numeric(sampleData_V ["38IC0"]) * 1000
-# sampleData_mV ["err38IC0"] = pd.to_numeric(sampleData_V ["err38IC0"]) * 1000
-# sampleData_mV ["36IC1"] = pd.to_numeric(sampleData_V ["36IC1"]) * 1000
-# sampleData_mV ["err36IC1"] = pd.to_numeric(sampleData_V ["err36IC1"]) * 1000
-# sampleData_mV ["39F"] = pd.to_numeric(sampleData_V ["39F"]) * 1000
-# sampleData_mV ["err39F"] = pd.to_numeric(sampleData_V ["err39F"]) * 1000
-# sampleData_mV ["37IC0"] = pd.to_numeric(sampleData_V ["37IC0"]) * 1000
-# sampleData_mV ["err37IC0"] = pd.to_numeric(sampleData_V ["err37IC0"]) * 1000
+# filePath = "../test_data/Run4esempio.txt"
+filePath = "C:\\Users\\teres\\Documents\\PyCalcolAr\\test_data\\Run4esempio.txt"
 
+df_initData = pd.read_csv(filePath, header = None, names = colNamesInitData)
 
-# initData
+# creo un nuovo dataframe con le colonne utili
+sampleData_utilData = df_initData[['40Ar F', 'err40Ar F', '38Ar IC0', 'err38Ar IC0', '36Ar IC1', 'err36Ar IC1', '39Ar F', 'err39Ar F','37Ar IC1', 'err37Ar IC1']]
+
+#eliminare ultima riga del dataframe che contiene "dati sbagliati"
+sampleData_V = sampleData_utilData.drop([5]) #da togliere nella versione finale (solo per il file Run4esempio.txt)
+
+print (sampleData_V)
+
+sampleData_V = sampleData_V.replace(["{", "}"], ["", ""], regex=True)
+
+sampleData_mV = pd.DataFrame()
+sampleData_mV ["40Ar F"] = pd.to_numeric(sampleData_V ["40Ar F"]) * 1000
+sampleData_mV ["err40Ar F"] = pd.to_numeric(sampleData_V ["err40Ar F"]) * 1000
+sampleData_mV ["38Ar IC0"] = pd.to_numeric(sampleData_V ["38Ar IC0"]) * 1000
+sampleData_mV ["err38Ar IC0"] = pd.to_numeric(sampleData_V ["err38Ar IC0"]) * 1000
+sampleData_mV ["36Ar IC1"] = pd.to_numeric(sampleData_V ["36Ar IC1"]) * 1000
+sampleData_mV ["err36Ar IC1"] = pd.to_numeric(sampleData_V ["err36Ar IC1"]) * 1000
+sampleData_mV ["39Ar F"] = pd.to_numeric(sampleData_V ["39Ar F"]) * 1000
+sampleData_mV ["err39Ar F"] = pd.to_numeric(sampleData_V ["err39Ar F"]) * 1000
+sampleData_mV ["37Ar IC1"] = pd.to_numeric(sampleData_V ["37Ar IC1"]) * 1000
+sampleData_mV ["err37Ar IC1"] = pd.to_numeric(sampleData_V ["err37Ar IC1"]) * 1000
+
+print (sampleData_mV)
+
+# sampleData_mV 40Ar F, err40Ar F, 39Ar F, err39Ar F, 38Ar F, err38Ar F, 37Ar F, err37Ar F, 36Ar F, err36Ar F,  
