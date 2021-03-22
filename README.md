@@ -30,18 +30,19 @@ Use `--global` if you want to set user/password for all git projects, or `--loca
 To CLONE locally a remote repository (e.g. PyCalcolAr), run the following command in the directory where you want the repository to be hosted (a nuw sub-directory with the repository name will be created here). This command line can be copied from the "clone" icon in the repository home page. You can clone the repository wherever yoy like on your machine.
 
 ```
-git clone <remote repository URL>
+git clone https://andrebis@bitbucket.org/andrebis/pycalcolar.git
 ```
+Use another URL in case you are cloning another repository.
 
 
-To pull changes FROM remote repository TO the local one, run the following command in the root directory of your local repository.
+To pull changes FROM remote repository TO the local one, run the following command in the root directory of your local repository (e.g. C://<some path>/pycalcolar).
 
 ```
 git pull
 ```
 
 
-To push changes TO remote repository FROM the local one, run the following sequence of commands in the root directory of your local repository.
+To push changes TO remote repository FROM the local one, run the following sequence of commands in the root directory of your local repository (e.g. C://<some path>/pycalcolar).
 
 ```
 git add -A
@@ -54,5 +55,5 @@ More tutorials on GIT can be found at [Atlassian](https://www.atlassian.com/git/
 
 ## Process Ar/Ar data with PyCalcolAr ##
 
-Navigate to the root directory of your local PyCalcolAr repository (wherever you have cloned it), right-click and select "Jupyter Lab" (recomended) or "Jupyter Notebook", and Jupyter will open in your web browser. Open the "notebooks" directory and run a notebook with a double click.
+Navigate to the root directory of your local PyCalcolAr repository (wherever you have cloned it, e.g. C://<some path>/pycalcolar), right-click and select "Jupyter Lab" (recomended) or "Jupyter Notebook", and Jupyter will open in your web browser. Open the "notebooks" directory and run a notebook with a double click.
 
