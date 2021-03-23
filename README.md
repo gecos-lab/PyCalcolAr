@@ -11,7 +11,7 @@ Important: insall as standard user, NOT as adminstrator (if the PC has more than
 
 2) Install GIT for your system (either Windows, MacOS or Linux) from [Atlassian](https://www.atlassian.com/git/tutorials/install-git) (the company running BitBucket), and create an account with your institutional email at [BitBucket](https://bitbucket.org).
 
-3) On Windows you can add a right-click command to run Jupyter Notebook and Jupyter Lab (recomended) in a particular directory (e.g. the PyCalcolAr directory) by merging [the keys that yo can download here](https://bitbucket.org/andrebis/pycalcolar/src/master/helpers/Jupyter_right_click.reg) in the Windows registry.
+3) On Windows you can add a right-click command to run Jupyter Notebook and Jupyter Lab (recomended) in a particular directory (e.g. the PyCalcolAr directory) by merging [the keys that yo can download here](<a id="raw-url" href="https://bitbucket.org/andrebis/pycalcolar/src/master/helpers/Jupyter_right_click.reg">Download FILE</a>) in the Windows registry.
 
 
 ## Sync/backup with GIT ##
