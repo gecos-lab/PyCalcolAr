@@ -1,6 +1,4 @@
-# PyCalcolAr #
-
-__ Ar/Ar geochronology in Jupyter __
+# PyCalcolAr - Ar/Ar geochronology with Python and Jupyter #
 
 
 ## Installing as a simple user ##
