@@ -3,8 +3,12 @@
 __ Ar/Ar geochronology in Jupyter __
 
 
+## Installing as a simple user ##
 
-## Installing ##
+Download the executable for your platfrom from the **[release directory](https://bitbucket.org/andrebis/pycalcolar/src/master/release/)**.
+
+
+## Installing as a developer ##
 
 1) Install Anaconda for your system (either Windows, MacOS or Linux) from the [Anaconda installation page](https://www.anaconda.com/products/individual). Some alternatives are available for MacOS and Linux, but not supported.
 
@@ -12,7 +16,7 @@ Important: insall as standard user, NOT as adminstrator (if the PC has more than
 
 2) Install GIT for your system (either Windows, MacOS or Linux) from [Atlassian](https://www.atlassian.com/git/tutorials/install-git) (the company running BitBucket), and create an account with your institutional email at [BitBucket](https://bitbucket.org).
 
-3) On Windows you can add a right-click command to run Jupyter Notebook and Jupyter Lab (recomended) in a particular directory (e.g. the PyCalcolAr directory) by merging the registry keys that you can [download from here](https://bitbucket.org/andrebis/pycalcolar/raw/9949295e1857d10dd54a3a4c3cd31797e3be013e/helpers/Jupyter_right_click.zip).
+3) On Windows you can add a right-click command to run Jupyter Notebook and Jupyter Lab (recomended) in a particular directory (e.g. the PyCalcolAr directory) by merging the registry keys that you can [download from here](https://bitbucket.org/andrebis/pycalcolar/src/master/jupyter/right_click/Jupyter_right_click.zip).
 
 
 ## Sync/backup with GIT ##
@@ -50,9 +54,11 @@ git add -A
 git commit -m "<message for this commit>"
 $ git push origin master
 ```
+
 The first line "stages" the changes you have done to your local files to be "committed". The second line "commits" these changes (registers them as valid and confirmed, with some note added in the "message"). The third line actually pushes the changes to the remote repository (in the "master" branch).
 
 More tutorials on GIT can be found at [Atlassian](https://www.atlassian.com/git/tutorials) or with [Google](www.google.com).
+
 
 ## Process Ar/Ar data with PyCalcolAr ##
 
