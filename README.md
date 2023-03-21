@@ -60,5 +60,7 @@ More tutorials on GIT can be found at [Atlassian](https://www.atlassian.com/git/
 
 ## Process Ar/Ar data with PyCalcolAr ##
 
+** TO BE UPDATED **
+
 Navigate to the root directory of your local PyCalcolAr repository (wherever you have cloned it, e.g. C://<some path>/pycalcolar), right-click and select "Jupyter Lab" (recomended) or "Jupyter Notebook", and Jupyter will open in your web browser. Open the "notebooks" directory and run a notebook with a double click.
 
