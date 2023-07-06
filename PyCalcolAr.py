@@ -20,7 +20,7 @@ import os
 from adjustText import adjust_text
 
 
-# ### Importazione del file sample_name_config.xlsx
+# ### importing the file sample_name_config.xlsx
 # #### (unico parametro da modificare nel codice)
 
 
