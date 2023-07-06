@@ -5,7 +5,6 @@
 
 # ### Inizializzazione
 
-# In[48]:
 
 
 # Importare le librerie utili per la creazione del codice
@@ -24,7 +23,6 @@ from adjustText import adjust_text
 # ### Importazione del file sample_name_config.xlsx
 # #### (unico parametro da modificare nel codice)
 
-# In[52]:
 
 
 # indicate the path of the sample_name_config.xlsx file
