@@ -1,4 +1,4 @@
-# PyCalcolAr - Ar/Ar geochronology data processing and plotting with Pytho #
+# PyCalcolAr - Ar/Ar geochronology data processing and plotting with Python #
 
 
 ## Installing as a simple user ##
